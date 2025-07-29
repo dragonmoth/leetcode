@@ -1,0 +1,12 @@
+lass Solution(object):
+    def countSymmetricIntegers(self, low, high):
+        count=0
+        for i in range(low,high+1):
+            s=str(i)
+            if len(s) % 2 == 0:
+                n = len(s) // 2
+                left = s[:n]
+                right = s[n:]
+                if sum(int(d) for d in left) == sum(int(d) for d in right):
+                   count+=1
+        return count        
